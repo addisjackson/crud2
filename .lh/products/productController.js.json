@@ -1,0 +1,210 @@
+{
+    "sourceFile": "products/productController.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 48,
+            "patches": [
+                {
+                    "date": 1688048350625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688048369090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const faker = require('@faker-js/faker');\r\n-const { readJsonFile, writeJsonFile } = require('..helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('.helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n"
+                },
+                {
+                    "date": 1688048388798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const faker = require('@faker-js/faker');\r\n-const { readJsonFile, writeJsonFile } = require('.helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n"
+                },
+                {
+                    "date": 1688048394922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const faker = require('@faker-js/faker');\r\n-const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('..dataUtils/helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n"
+                },
+                {
+                    "date": 1688048425215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n   console.log(newProduct);\r\n-};\r\n \r\n+\r\n const deleteProduct = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const updatedProducts = products.filter(\r\n     (product) => product.name.toLowerCase() !== productName.toLowerCase()\r\n"
+                },
+                {
+                    "date": 1688063636197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const faker = require('@faker-js/faker');\r\n-const { readJsonFile, writeJsonFile } = require('..dataUtils/helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('..');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n"
+                },
+                {
+                    "date": 1688064353666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const faker = require('@faker-js/faker');\r\n-const { readJsonFile, writeJsonFile } = require('..');\r\n+const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n@@ -9,9 +9,9 @@\n     const newProduct = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n-        inStock: inStock,\r\n+        inStock: inStock,i\r\n         quantityAvailable: quantityAvailable\r\n   }\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1688064539056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n-\tconst inStock = faker.datatype.boolean();\r\n+\tîconst inStock = faker.datatype.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n     const newProduct = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688064544318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n-\tîconst inStock = faker.datatype.boolean();\r\n+\tíconst inStock = faker.datatype.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n     const newProduct = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688064550770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n-\tíconst inStock = faker.datatype.boolean();\r\n+\t  const inStock = faker.datatype.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n     const newProduct = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688064579609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     const newProduct = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n-        inStock: inStock,i\r\n+        inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n   }\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1688064586663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n-        quantityAvailable: quantityAvailable\r\n+        quantityAvailable: quantityAvailable,\r\n   }\r\n   }\r\n \r\n   const products = readJsonFile('products.json');\r\n"
+                },
+                {
+                    "date": 1688064611643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n-        quantityAvailable: quantityAvailable,\r\n+        quantityAvailable: quantityAvailable\r\n   }\r\n   }\r\n \r\n   const products = readJsonFile('products.json');\r\n"
+                },
+                {
+                    "date": 1688064658943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const createProduct = () => {\r\n \r\n \t  const inStock = faker.datatype.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n-    const newProduct = {\r\n+    const pr = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n"
+                },
+                {
+                    "date": 1688064721938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n const createProduct = () => {\r\n \r\n \t  const inStock = faker.datatype.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n-    const pr = {\r\n+    const product = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n+    }\r\n   }\r\n-  }\r\n \r\n   const products = readJsonFile('products.json');\r\n   products.push(newProduct);\r\n   writeJsonFile('products.json', products);\r\n"
+                },
+                {
+                    "date": 1688065296621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     }\r\n   }\r\n \r\n   const products = readJsonFile('products.json');\r\n-  products.push(newProduct);\r\n+  products.push(roduct);\r\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n   console.log(newProduct);\r\n"
+                },
+                {
+                    "date": 1688065334572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,13 @@\n     }\r\n   }\r\n \r\n   const products = readJsonFile('products.json');\r\n-  products.push(roduct);\r\n+  products.push(product);\r\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n-  console.log(newProduct);\r\n+  console.log(product);\r\n \r\n \r\n const deleteProduct = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n"
+                },
+                {
+                    "date": 1688065364049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n     }\r\n-  }\r\n+  \r\n \r\n   const products = readJsonFile('products.json');\r\n   products.push(product);\r\n   writeJsonFile('products.json', products);\r\n"
+                },
+                {
+                    "date": 1688065369468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,8 @@\n         prodID: nanoid(5),\r\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n     }\r\n-  \r\n-\r\n   const products = readJsonFile('products.json');\r\n   products.push(product);\r\n   writeJsonFile('products.json', products);\r\n \r\n"
+                },
+                {
+                    "date": 1688065381129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n         quantityAvailable: quantityAvailable\r\n     }\r\n   const products = readJsonFile('products.json');\r\n   products.push(product);\r\n+  \r\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n   console.log(product);\r\n"
+                },
+                {
+                    "date": 1688065409243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         quantityAvailable: quantityAvailable\r\n     }\r\n   const products = readJsonFile('products.json');\r\n   products.push(product);\r\n-  \r\n+  re\r\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n   console.log(product);\r\n"
+                },
+                {
+                    "date": 1688065422539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,11 @@\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n     }\r\n   const products = readJsonFile('products.json');\r\n+  \r\n   products.push(product);\r\n-  re\r\n+  return \r\n   writeJsonFile('products.json', products);\r\n \r\n   console.log('New product created:');\r\n   console.log(product);\r\n"
+                },
+                {
+                    "date": 1688065430006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n     }\r\n   const products = readJsonFile('products.json');\r\n-  \r\n+  return product\r\n   products.push(product);\r\n   return \r\n   writeJsonFile('products.json', products);\r\n \r\n"
+                },
+                {
+                    "date": 1688065447536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   return product\r\n   products.push(product);\r\n   return \r\n   writeJsonFile('products.json', products);\r\n-\r\n+  return product\r\n   console.log('New product created:');\r\n   console.log(product);\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1688065457298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         inStock: inStock,\r\n         quantityAvailable: quantityAvailable\r\n     }\r\n   const products = readJsonFile('products.json');\r\n-  return product\r\n+\r\n   products.push(product);\r\n   return \r\n   writeJsonFile('products.json', products);\r\n   return product\r\n"
+                },
+                {
+                    "date": 1688065495358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     }\r\n   const products = readJsonFile('products.json');\r\n \r\n   products.push(product);\r\n-  return \r\n   writeJsonFile('products.json', products);\r\n   return product\r\n   console.log('New product created:');\r\n   console.log(product);\r\n"
+                },
+                {
+                    "date": 1688065503424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n   writeJsonFile('products.json', products);\r\n   return product\r\n   console.log('New product created:');\r\n   console.log(product);\r\n+  }\r\n \r\n-\r\n const deleteProduct = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const updatedProducts = products.filter(\r\n     (product) => product.name.toLowerCase() !== productName.toLowerCase()\r\n"
+                },
+                {
+                    "date": 1688065601124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n \r\n-\t  const inStock = faker.datatype.boolean();\r\n+\t  const inStock = faker.dataType.boolean();\r\n     const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n     const product = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688065610091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const createProduct = () => {\r\n \r\n \t  const inStock = faker.dataType.boolean();\r\n-    const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n+    const quantityAvailable = (inStock ? faker.datatTpe.number({ min: 100, max: 10000 }) : null);\r\n     const product = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n"
+                },
+                {
+                    "date": 1688065616508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n const createProduct = () => {\r\n \r\n \t  const inStock = faker.dataType.boolean();\r\n-    const quantityAvailable = (inStock ? faker.datatTpe.number({ min: 100, max: 10000 }) : null);\r\n+    const quantityAvailable = (inStock ? faker.dataType.number({ min: 100, max: 10000 }) : null);\r\n     const product = {\r\n         name: faker.commerce.product(),\r\n         priceInCents: faker.commerce.price(10, 1000, 0),\r\n         prodID: nanoid(5),\r\n"
+                },
+                {
+                    "date": 1688065742702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,26 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n-const createProduct = () => {\r\n \r\n-\t  const inStock = faker.dataType.boolean();\r\n-    const quantityAvailable = (inStock ? faker.dataType.number({ min: 100, max: 10000 }) : null);\r\n-    const product = {\r\n-        name: faker.commerce.product(),\r\n-        priceInCents: faker.commerce.price(10, 1000, 0),\r\n-        prodID: nanoid(5),\r\n-        inStock: inStock,\r\n-        quantityAvailable: quantityAvailable\r\n-    }\r\n-  const products = readJsonFile('products.json');\r\n \r\n-  products.push(product);\r\n-  writeJsonFile('products.json', products);\r\n-  return product\r\n-  console.log('New product created:');\r\n-  console.log(product);\r\n-  }\r\n \r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n const deleteProduct = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const updatedProducts = products.filter(\r\n     (product) => product.name.toLowerCase() !== productName.toLowerCase()\r\n"
+                },
+                {
+                    "date": 1688065768520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,34 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n+oid\");\r\n+const { readJsonFile, writeJsonFile } = require(\"../helpers/fileUtils\");\r\n \r\n+const createProduct = () => {\r\n+  const inStock = faker.datatype.boolean();\r\n+  const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n+  const product = {\r\n+    name: faker.commerce.product(),\r\n+    priceInCents: faker.commerce.price(10, 1000, 0),\r\n+    prodID: nanoid(5),\r\n+    inStock: inStock,\r\n+    quantityAvailable: quantityAvailable\r\n+  };\r\n \r\n+  const products = readJsonFile('products.json');\r\n \r\n+  products.push(product);\r\n+  writeJsonFile('products.json', products);\r\n \r\n+  console.log('New product created:');\r\n+  console.log(product);\r\n \r\n+  return product;\r\n+};\r\n \r\n \r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n const deleteProduct = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const updatedProducts = products.filter(\r\n     (product) => product.name.toLowerCase() !== productName.toLowerCase()\r\n"
+                },
+                {
+                    "date": 1688065775110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const { nanoid } = require(\"nanoid\");\r\n+const { nanoid } = require(\"nanoid\");oid\");\r\n \r\n-oid\");\r\n-const { readJsonFile, writeJsonFile } = require(\"../helpers/fileUtils\");\r\n \r\n const createProduct = () => {\r\n   const inStock = faker.datatype.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n"
+                },
+                {
+                    "date": 1688065785033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const { nanoid } = require(\"nanoid\");oid\");\r\n+const { nanoid } = require(\"nanoid\");\r\n \r\n-\r\n const createProduct = () => {\r\n   const inStock = faker.datatype.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688065825854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n-  const inStock = faker.datatype.boolean();\r\n+  const inStock = faker.random.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n     name: faker.commerce.product(),\r\n     priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688066262356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n-  const inStock = faker.random.boolean();\r\n+  const inStock = faker.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n     name: faker.commerce.product(),\r\n     priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688066310523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n-  const inStock = faker.boolean();\r\n+  const inStock = faker.databoolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n     name: faker.commerce.product(),\r\n     priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688066317254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n \r\n const createProduct = () => {\r\n-  const inStock = faker.databoolean();\r\n+  const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n     name: faker.commerce.product(),\r\n     priceInCents: faker.commerce.price(10, 1000, 0),\r\n"
+                },
+                {
+                    "date": 1688070753872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,8 +98,10 @@\n   console.log(`Products below ${priceThreshold}:`);\r\n   console.log(filteredProducts);\r\n };\r\n \r\n+\r\n+\r\n module.exports = {\r\n   createProduct,\r\n   deleteProduct,\r\n   updateProduct,\r\n"
+                },
+                {
+                    "date": 1688070767568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,15 +98,39 @@\n   console.log(`Products below ${priceThreshold}:`);\r\n   console.log(filteredProducts);\r\n };\r\n \r\n+function showProductsInStock() {\r\n+  const inStockProducts = productService.getProductsInStock();\r\n+  if (inStockProducts.length > 0) {\r\n+    console.log('Products in stock:');\r\n+    inStockProducts.forEach((product) => {\r\n+      console.log(product);\r\n+    });\r\n+  } else {\r\n+    console.log('No products in stock.');\r\n+  }\r\n+}\r\n \r\n+function showProductsOutOfStock() {\r\n+  const outOfStockProducts = productService.getProductsOutOfStock();\r\n+  if (outOfStockProducts.length > 0) {\r\n+    console.log('Products out of stock:');\r\n+    outOfStockProducts.forEach((product) => {\r\n+      console.log(product);\r\n+    });\r\n+  } else {\r\n+    console.log('All products are in stock.');\r\n+  }\r\n+}\r\n \r\n+\r\n module.exports = {\r\n   createProduct,\r\n   deleteProduct,\r\n   updateProduct,\r\n   showProduct,\r\n   showAllProducts,\r\n   sortProductsByPrice,\r\n   showProductsBelowPrice,\r\n+  \r\n };\r\n"
+                },
+                {
+                    "date": 1688070774270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,6 +131,7 @@\n   showProduct,\r\n   showAllProducts,\r\n   sortProductsByPrice,\r\n   showProductsBelowPrice,\r\n-  \r\n+  showProductsInStock,\r\n+  showProductsOutOfStock,\r\n };\r\n"
+                },
+                {
+                    "date": 1688070786820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,6 +132,6 @@\n   showAllProducts,\r\n   sortProductsByPrice,\r\n   showProductsBelowPrice,\r\n   showProductsInStock,\r\n-  showProductsOutOfStock,\r\n+  showProductsOutOfStock\r\n };\r\n"
+                },
+                {
+                    "date": 1688070798219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n-\r\n+cvon\r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688070823917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n-cvon\r\n+const productService = require('./productService');\r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688070831493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n const productService = require('./productService');\r\n+\r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688071581492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n const productService = require('./productService');\r\n \r\n+\r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688071588885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n const productService = require('./productService');\r\n+const co\r\n \r\n-\r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n   const product = {\r\n"
+                },
+                {
+                    "date": 1688071595810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n const productService = require('./productService');\r\n-const co\r\n+const consol\r\n \r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n"
+                },
+                {
+                    "date": 1688071602593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const faker = require('@faker-js/faker');\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const { nanoid } = require(\"nanoid\");\r\n const productService = require('./productService');\r\n-const consol\r\n+const consoleUtils = require('../helpers/consoleUtils');\r\n \r\n const createProduct = () => {\r\n   const inStock = faker.dataType.boolean();\r\n   const quantityAvailable = inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null;\r\n"
+                }
+            ],
+            "date": 1688048350625,
+            "name": "Commit-0",
+            "content": "const faker = require('@faker-js/faker');\r\nconst { readJsonFile, writeJsonFile } = require('..helpers/dataUtils');\r\nconst { nanoid } = require(\"nanoid\");\r\n\r\nconst createProduct = () => {\r\n\r\n\tconst inStock = faker.datatype.boolean();\r\n    const quantityAvailable = (inStock ? faker.datatype.number({ min: 100, max: 10000 }) : null);\r\n    const newProduct = {\r\n        name: faker.commerce.product(),\r\n        priceInCents: faker.commerce.price(10, 1000, 0),\r\n        prodID: nanoid(5),\r\n        inStock: inStock,\r\n        quantityAvailable: quantityAvailable\r\n  }\r\n  }\r\n\r\n  const products = readJsonFile('products.json');\r\n  products.push(newProduct);\r\n  writeJsonFile('products.json', products);\r\n\r\n  console.log('New product created:');\r\n  console.log(newProduct);\r\n};\r\n\r\nconst deleteProduct = (productName) => {\r\n  const products = readJsonFile('products.json');\r\n  const updatedProducts = products.filter(\r\n    (product) => product.name.toLowerCase() !== productName.toLowerCase()\r\n  );\r\n  writeJsonFile('products.json', updatedProducts);\r\n\r\n  console.log(`Product \"${productName}\" deleted.`);\r\n};\r\n\r\nconst updateProduct = (productName) => {\r\n  const products = readJsonFile('products.json');\r\n  const productToUpdateIndex = products.findIndex(\r\n    (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (productToUpdateIndex === -1) {\r\n    console.log(`Product \"${productName}\" not found.`);\r\n    return;\r\n  }\r\n\r\n  // Modify the properties of the product as needed\r\n  products[productToUpdateIndex].name = 'Updated Product Name';\r\n  products[productToUpdateIndex].priceInCents = 9999;\r\n\r\n  writeJsonFile('products.json', products);\r\n\r\n  console.log(`Product \"${productName}\" updated.`);\r\n};\r\n\r\nconst showProduct = (productName) => {\r\n  const products = readJsonFile('products.json');\r\n  const product = products.find(\r\n    (p) => p.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (product) {\r\n    console.log('Product details:');\r\n    console.log(product);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found.`);\r\n  }\r\n};\r\n\r\nconst showAllProducts = () => {\r\n  const products = readJsonFile('products.json');\r\n  const simplifiedProducts = products.map((product) => ({\r\n    name: product.name,\r\n    id: product.id,\r\n    price: product.priceInCents,\r\n  }));\r\n\r\n  console.log('All products:');\r\n  console.log(simplifiedProducts);\r\n};\r\n\r\nconst sortProductsByPrice = () => {\r\n  const products = readJsonFile('products.json');\r\n  const sortedProducts = products.sort((a, b) => a.priceInCents - b.priceInCents);\r\n\r\n  console.log('Products sorted by price:');\r\n  console.log(sortedProducts);\r\n};\r\n\r\nconst showProductsBelowPrice = (priceThreshold) => {\r\n  const products = readJsonFile('products.json');\r\n  const filteredProducts = products.filter(\r\n    (product) => product.priceInCents < priceThreshold\r\n  );\r\n\r\n  console.log(`Products below ${priceThreshold}:`);\r\n  console.log(filteredProducts);\r\n};\r\n\r\nmodule.exports = {\r\n  createProduct,\r\n  deleteProduct,\r\n  updateProduct,\r\n  showProduct,\r\n  showAllProducts,\r\n  sortProductsByPrice,\r\n  showProductsBelowPrice,\r\n};\r\n"
+        }
+    ]
+}
