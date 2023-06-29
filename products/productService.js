@@ -1,22 +1,22 @@
-const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');
+const { readJsonFile, writeJsonFile } = require("../helpers/dataUtils");
 
 const getProducts = () => {
-  return readJsonFile('products.json');
+  return readJsonFile("products.json");
 };
 
 const updateProducts = (products) => {
-  writeJsonFile('products.json', products);
+  writeJsonFile("products.json", products);
 };
 
 function getProductsInStock() {
-  const productsData = readJsonFile('products.json');
-  return productsData.filter(product => product.instock);
+  const productsData = readJsonFile("products.json");
+  return productsData.filter((product) => product.instock);
 }
 
 // Get products out of stock
 function getProductsOutOfStock() {
-  const productsData = readJsonFile('products.json');
-  return productsData.filter(product => !product.instock);
+  const productsData = readJsonFile("products.json");
+  return productsData.filter((product) => !product.instock);
 }
 
 module.exports = {
@@ -24,5 +24,4 @@ module.exports = {
   updateProducts,
   getProductsInStock,
   getProductsOutOfStock,
-  
 };

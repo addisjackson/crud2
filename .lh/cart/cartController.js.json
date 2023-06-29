@@ -3,200 +3,20 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 46,
+            "activePatchIndex": 1,
             "patches": [
                 {
-                    "date": 1688067732175,
+                    "date": 1688076948844,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 },
                 {
-                    "date": 1688067807280,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,40 @@\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n+function getCartTotal() {\r\n+  const cart = dataUtils.readJSONFile('data/cart.json');\r\n+  let total = 0;\r\n+  cart.items.forEach((item) => {\r\n+    total += item.priceInCents * item.quantity;\r\n+  });\r\n+  return total;\r\n+}\r\n+function getCartTotal() {\r\n+  const cart = dataUtils.readJSONFile('data/cart.json');\r\n+  let total = 0;\r\n+  cart.items.forEach((item) => {\r\n+    total += item.priceInCents * item.quantity;\r\n+  });\r\n+  return total;\r\n+}\r\n+function getCartTotal() {\r\n+  const cart = dataUtils.readJSONFile('data/cart.json');\r\n+  let total = 0;\r\n+  cart.items.forEach((item) => {\r\n+    total += item.priceInCents * item.quantity;\r\n+  });\r\n+  return total;\r\n+}\r\n+function getCartTotal() {\r\n+  const cart = dataUtils.readJSONFile('data/cart.json');\r\n+  let total = 0;\r\n+  cart.items.forEach((item) => {\r\n+    total += item.priceInCents * item.quantity;\r\n+  });\r\n+  return total;\r\n+}\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n   viewCart,\r\n"
-                },
-                {
-                    "date": 1688067841266,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,32 +76,8 @@\n     total += item.priceInCents * item.quantity;\r\n   });\r\n   return total;\r\n }\r\n-function getCartTotal() {\r\n-  const cart = dataUtils.readJSONFile('data/cart.json');\r\n-  let total = 0;\r\n-  cart.items.forEach((item) => {\r\n-    total += item.priceInCents * item.quantity;\r\n-  });\r\n-  return total;\r\n-}\r\n-function getCartTotal() {\r\n-  const cart = dataUtils.readJSONFile('data/cart.json');\r\n-  let total = 0;\r\n-  cart.items.forEach((item) => {\r\n-    total += item.priceInCents * item.quantity;\r\n-  });\r\n-  return total;\r\n-}\r\n-function getCartTotal() {\r\n-  const cart = dataUtils.readJSONFile('data/cart.json');\r\n-  let total = 0;\r\n-  cart.items.forEach((item) => {\r\n-    total += item.priceInCents * item.quantity;\r\n-  });\r\n-  return total;\r\n-}\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n   viewCart,\r\n"
-                },
-                {
-                    "date": 1688067848506,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,5 +83,6 @@\n   viewCart,\r\n   deleteCart,\r\n   updateProductInCart,\r\n   viewCartItem,\r\n+  \r\n };\r\n"
-                },
-                {
-                    "date": 1688067854741,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,6 +83,6 @@\n   viewCart,\r\n   deleteCart,\r\n   updateProductInCart,\r\n   viewCartItem,\r\n-  \r\n+  getCartTotal\r\n };\r\n"
-                },
-                {
-                    "date": 1688068342146,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cart = dataUtils.readJSONFile('data/cart.json');\r\n+  const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cart.items.forEach((item) => {\r\n     total += item.priceInCents * item.quantity;\r\n   });\r\n"
-                },
-                {
-                    "date": 1688068402127,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n-  cart.items.forEach((item) => {\r\n+  carttems.forEach((item) => {\r\n     total += item.priceInCents * item.quantity;\r\n   });\r\n   return total;\r\n }\r\n"
-                },
-                {
-                    "date": 1688068433611,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \r\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n-  carttems.forEach((item) => {\r\n+  cartItems.forEach((product) => {\r\n     total += item.priceInCents * item.quantity;\r\n   });\r\n   return total;\r\n }\r\n"
-                },
-                {
-                    "date": 1688068440713,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-    total += item.priceInCents * item.quantity;\r\n+    total += product.priceInCents * item.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068446548,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-    total += product.priceInCents * item.quantity;\r\n+    total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068478922,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-    total += product.priceInCents * product.quantity;\r\n+   const  total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068488690,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-   const  total += product.priceInCents * product.quantity;\r\n+   const total  total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068499390,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-   const total  total += product.priceInCents * product.quantity;\r\n+   const total = total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068551720,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n function getCartTotal() {\r\n   const cartItems = readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n-   const total = total += product.priceInCents * product.quantity;\r\n+   total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n }\r\n \r\n"
-                },
-                {
-                    "date": 1688068655640,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cartItems = readJsonFile('cart.json');\r\n+  const cartItems = datareadJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n"
-                },
-                {
-                    "date": 1688068662640,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cartItems = datareadJsonFile('cart.json');\r\n+  const cartItems = dataUtilsd.readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n"
-                },
-                {
-                    "date": 1688068670871,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cartItems = dataUtilsd.readJsonFile('cart.json');\r\n+  const cartItems = dataUtils.readJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n"
-                },
-                {
-                    "date": 1688068765058,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,8 +75,9 @@\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n+  \r\n }\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n"
-                },
-                {
-                    "date": 1688068788130,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n   return total;\r\n-  \r\n+  console.log(`Total: ${total}`); \r\n }\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n"
-                },
-                {
-                    "date": 1688068796953,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n-  return total;\r\n+ \r\n   console.log(`Total: ${total}`); \r\n }\r\n \r\n module.exports = {\r\n"
-                },
-                {
-                    "date": 1688068803060,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,10 @@\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n- \r\n   console.log(`Total: ${total}`); \r\n+  \r\n }\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n"
-                },
-                {
-                    "date": 1688068812402,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n   console.log(`Total: ${total}`); \r\n-  \r\n+  return total;\r\n }\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n"
-                },
-                {
-                    "date": 1688068828091,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cartItems = dataUtils.readJsonFile('cart.json');\r\n+  const cartItems = dreadJsonFile('cart.json');\r\n   let total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n"
-                },
-                {
-                    "date": 1688068847333,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,10 @@\n   }\r\n };\r\n \r\n function getCartTotal() {\r\n-  const cartItems = dreadJsonFile('cart.json');\r\n-  let total = 0;\r\n+  const cartItems = readJsonFile('cart.json');\r\n+  const total = 0;\r\n   cartItems.forEach((product) => {\r\n    total += product.priceInCents * product.quantity;\r\n   });\r\n   console.log(`Total: ${total}`); \r\n"
-                },
-                {
-                    "date": 1688068875538,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-\r\n+const\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068883169,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const\r\n+const {}\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068888765,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const {}\r\n+const \r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068894587,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const \r\n+const c\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068900334,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const c\r\n+const cartService = require('./cartService');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068924435,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n+cons\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068932118,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-cons\r\n+const pr\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068938500,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const pr\r\n+const prod\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068946005,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const prod\r\n+const products.json = require('./products.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068953423,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n const products.json = require('./products.json');\r\n+\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068958771,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n const products.json = require('./products.json');\r\n-\r\n+const \r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068972316,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n const products.json = require('./products.json');\r\n-const \r\n+const cart.json = require('./');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068979232,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n const products.json = require('./products.json');\r\n-const cart.json = require('./');\r\n+const cart.json = require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688068984300,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const products.json = require('./products.json');\r\n+const products.json = require('./data/products.json');\r\n const cart.json = require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n"
-                },
-                {
-                    "date": 1688069020571,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const products.json = require('./data/products.json');\r\n+const jsonP = require('./data/products.json');\r\n const cart.json = require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n"
-                },
-                {
-                    "date": 1688069037967,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const jsonP = require('./data/products.json');\r\n-const cart.json = require('./data/cart.json');\r\n+const jsonProducts = require('./data/products.json');\r\n+const cart= require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688069045786,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const jsonProducts = require('./data/products.json');\r\n-const cart= require('./data/cart.json');\r\n+const products = require('./data/products.json');\r\n+const cartData= require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688069060355,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n const cartService = require('./cartService');\r\n-const products = require('./data/products.json');\r\n+const productsData = require('./data/products.json');\r\n const cartData= require('./data/cart.json');\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n"
-                },
-                {
-                    "date": 1688069095828,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-const cartService = require('./cartService');\r\n-const productsData = require('./data/products.json');\r\n-const cartData= require('./data/cart.json');\r\n+;\r\n+s.json');\r\n+\r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n"
-                },
-                {
-                    "date": 1688069106231,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n-;\r\n-s.json');\r\n \r\n const addProductToCart = (productName) => {\r\n   const products = readJsonFile('products.json');\r\n   const productIndex = products.findIndex(\r\n"
-                },
-                {
-                    "date": 1688069383612,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,16 +68,16 @@\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n-function getCartTotal() {\r\n-  const cartItems = readJsonFile('cart.json');\r\n-  const total = 0;\r\n-  cartItems.forEach((product) => {\r\n-   total += product.priceInCents * product.quantity;\r\n-  });\r\n-  console.log(`Total: ${total}`); \r\n-  return total;\r\n+f\r\n+ \r\n+ \r\n+ \r\n+ \r\n+ \r\n+ \r\n+ \r\n }\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n"
-                },
-                {
-                    "date": 1688069388795,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,17 +68,8 @@\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n-f\r\n- \r\n- \r\n- \r\n- \r\n- \r\n- \r\n- \r\n-}\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n   viewCart,\r\n"
-                },
-                {
-                    "date": 1688069398002,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,15 @@\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n+const getCartTotal = () => {\r\n+  const cartItems = readJsonFile('cart.json');\r\n+  for (const cartItem of cartItems) {\r\n+    total += cartItem.priceInCents*cartItem.quantity;\r\n+  }\r\n+  return total;\r\n+}\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n   viewCart,\r\n"
+                    "date": 1688077077927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,86 +1,86 @@\n-const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require(\"../helpers/dataUtils\");\r\n \r\n const addProductToCart = (productName) => {\r\n-  const products = readJsonFile('products.json');\r\n+  const products = readJsonFile(\"products.json\");\r\n   const productIndex = products.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n   );\r\n \r\n   if (productIndex !== -1) {\r\n-    const cartItems = readJsonFile('cart.json');\r\n+    const cartItems = readJsonFile(\"cart.json\");\r\n     const productToAdd = products[productIndex];\r\n \r\n     cartItems.push(productToAdd);\r\n-    writeJsonFile('cart.json', cartItems);\r\n+    writeJsonFile(\"cart.json\", cartItems);\r\n \r\n     products.splice(productIndex, 1);\r\n-    writeJsonFile('products.json', products);\r\n+    writeJsonFile(\"products.json\", products);\r\n \r\n     console.log(`Product \"${productName}\" added to the cart.`);\r\n   } else {\r\n     console.log(`Product \"${productName}\" not found.`);\r\n   }\r\n };\r\n \r\n const viewCart = () => {\r\n-  const cartItems = readJsonFile('cart.json');\r\n+  const cartItems = readJsonFile(\"cart.json\");\r\n \r\n-  console.log('Cart items:');\r\n+  console.log(\"Cart items:\");\r\n   console.log(cartItems);\r\n };\r\n \r\n const deleteCart = () => {\r\n-  writeJsonFile('cart.json', []);\r\n+  writeJsonFile(\"cart.json\", []);\r\n \r\n-  console.log('Cart deleted.');\r\n+  console.log(\"Cart deleted.\");\r\n };\r\n \r\n const updateProductInCart = (productName) => {\r\n-  const cartItems = readJsonFile('cart.json');\r\n+  const cartItems = readJsonFile(\"cart.json\");\r\n   const productIndex = cartItems.findIndex(\r\n     (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n   );\r\n \r\n   if (productIndex !== -1) {\r\n     // Modify the properties of the product in the cart as needed\r\n-    cartItems[productIndex].name = 'Updated Product Name';\r\n+    cartItems[productIndex].name = \"Updated Product Name\";\r\n     cartItems[productIndex].priceInCents = 9999;\r\n \r\n-    writeJsonFile('cart.json', cartItems);\r\n+    writeJsonFile(\"cart.json\", cartItems);\r\n \r\n     console.log(`Product \"${productName}\" updated in the cart.`);\r\n   } else {\r\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n const viewCartItem = (productName) => {\r\n-  const cartItems = readJsonFile('cart.json');\r\n+  const cartItems = readJsonFile(\"cart.json\");\r\n   const product = cartItems.find(\r\n     (p) => p.name.toLowerCase() === productName.toLowerCase()\r\n   );\r\n \r\n   if (product) {\r\n-    console.log('Cart item details:');\r\n+    console.log(\"Cart item details:\");\r\n     console.log(product);\r\n   } else {\r\n     console.log(`Product \"${productName}\" not found in the cart.`);\r\n   }\r\n };\r\n \r\n const getCartTotal = () => {\r\n-  const cartItems = readJsonFile('cart.json');\r\n+  const cartItems = readJsonFile(\"cart.json\");\r\n   for (const cartItem of cartItems) {\r\n-    total += cartItem.priceInCents*cartItem.quantity;\r\n+    total += cartItem.priceInCents * cartItem.quantity;\r\n   }\r\n   return total;\r\n-}\r\n+};\r\n \r\n module.exports = {\r\n   addProductToCart,\r\n   viewCart,\r\n   deleteCart,\r\n   updateProductInCart,\r\n   viewCartItem,\r\n-  getCartTotal\r\n+  getCartTotal,\r\n };\r\n"
                 }
             ],
-            "date": 1688067732175,
+            "date": 1688076948844,
             "name": "Commit-0",
-            "content": "const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n\r\nconst addProductToCart = (productName) => {\r\n  const products = readJsonFile('products.json');\r\n  const productIndex = products.findIndex(\r\n    (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (productIndex !== -1) {\r\n    const cartItems = readJsonFile('cart.json');\r\n    const productToAdd = products[productIndex];\r\n\r\n    cartItems.push(productToAdd);\r\n    writeJsonFile('cart.json', cartItems);\r\n\r\n    // Remove the product from the products.json file\r\n    products.splice(productIndex, 1);\r\n    writeJsonFile('products.json', products);\r\n\r\n    console.log(`Product \"${productName}\" added to the cart.`);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found.`);\r\n  }\r\n};\r\n\r\nconst viewCart = () => {\r\n  const cartItems = readJsonFile('cart.json');\r\n\r\n  console.log('Cart items:');\r\n  console.log(cartItems);\r\n};\r\n\r\nconst deleteCart = () => {\r\n  writeJsonFile('cart.json', []);\r\n\r\n  console.log('Cart deleted.');\r\n};\r\n\r\nconst updateProductInCart = (productName) => {\r\n  const cartItems = readJsonFile('cart.json');\r\n  const productIndex = cartItems.findIndex(\r\n    (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (productIndex !== -1) {\r\n    // Modify the properties of the product in the cart as needed\r\n    cartItems[productIndex].name = 'Updated Product Name';\r\n    cartItems[productIndex].priceInCents = 9999;\r\n\r\n    writeJsonFile('cart.json', cartItems);\r\n\r\n    console.log(`Product \"${productName}\" updated in the cart.`);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found in the cart.`);\r\n  }\r\n};\r\n\r\nconst viewCartItem = (productName) => {\r\n  const cartItems = readJsonFile('cart.json');\r\n  const product = cartItems.find(\r\n    (p) => p.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (product) {\r\n    console.log('Cart item details:');\r\n    console.log(product);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found in the cart.`);\r\n  }\r\n};\r\n\r\n\r\nmodule.exports = {\r\n  addProductToCart,\r\n  viewCart,\r\n  deleteCart,\r\n  updateProductInCart,\r\n  viewCartItem,\r\n};\r\n"
+            "content": "const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n\r\nconst addProductToCart = (productName) => {\r\n  const products = readJsonFile('products.json');\r\n  const productIndex = products.findIndex(\r\n    (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (productIndex !== -1) {\r\n    const cartItems = readJsonFile('cart.json');\r\n    const productToAdd = products[productIndex];\r\n\r\n    cartItems.push(productToAdd);\r\n    writeJsonFile('cart.json', cartItems);\r\n\r\n    products.splice(productIndex, 1);\r\n    writeJsonFile('products.json', products);\r\n\r\n    console.log(`Product \"${productName}\" added to the cart.`);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found.`);\r\n  }\r\n};\r\n\r\nconst viewCart = () => {\r\n  const cartItems = readJsonFile('cart.json');\r\n\r\n  console.log('Cart items:');\r\n  console.log(cartItems);\r\n};\r\n\r\nconst deleteCart = () => {\r\n  writeJsonFile('cart.json', []);\r\n\r\n  console.log('Cart deleted.');\r\n};\r\n\r\nconst updateProductInCart = (productName) => {\r\n  const cartItems = readJsonFile('cart.json');\r\n  const productIndex = cartItems.findIndex(\r\n    (product) => product.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (productIndex !== -1) {\r\n    // Modify the properties of the product in the cart as needed\r\n    cartItems[productIndex].name = 'Updated Product Name';\r\n    cartItems[productIndex].priceInCents = 9999;\r\n\r\n    writeJsonFile('cart.json', cartItems);\r\n\r\n    console.log(`Product \"${productName}\" updated in the cart.`);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found in the cart.`);\r\n  }\r\n};\r\n\r\nconst viewCartItem = (productName) => {\r\n  const cartItems = readJsonFile('cart.json');\r\n  const product = cartItems.find(\r\n    (p) => p.name.toLowerCase() === productName.toLowerCase()\r\n  );\r\n\r\n  if (product) {\r\n    console.log('Cart item details:');\r\n    console.log(product);\r\n  } else {\r\n    console.log(`Product \"${productName}\" not found in the cart.`);\r\n  }\r\n};\r\n\r\nconst getCartTotal = () => {\r\n  const cartItems = readJsonFile('cart.json');\r\n  for (const cartItem of cartItems) {\r\n    total += cartItem.priceInCents*cartItem.quantity;\r\n  }\r\n  return total;\r\n}\r\n\r\nmodule.exports = {\r\n  addProductToCart,\r\n  viewCart,\r\n  deleteCart,\r\n  updateProductInCart,\r\n  viewCartItem,\r\n  getCartTotal\r\n};\r\n"
         }
     ]
 }

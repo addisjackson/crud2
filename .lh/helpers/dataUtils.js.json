@@ -6,13 +6,13 @@
             "activePatchIndex": 0,
             "patches": [
                 {
-                    "date": 1688063842245,
+                    "date": 1688077132563,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 }
             ],
-            "date": 1688063842245,
+            "date": 1688077132563,
             "name": "Commit-0",
-            "content": "const fs = require('fs');\nconst path = require('path');\n\nconst dataFolderPath = path.join(__dirname, '../data');\n\nconst readJsonFile = (filename) => {\n  const filePath = path.join(dataFolderPath, filename);\n  if (fs.existsSync(filePath)) {\n    const fileData = fs.readFileSync(filePath, 'utf-8');\n    return JSON.parse(fileData);\n  }\n  return [];\n};\n\nconst writeJsonFile = (filename, data) => {\n  const filePath = path.join(dataFolderPath, filename);\n  fs.writeFileSync(filePath, JSON.stringify(data, null, 4));\n};\n\nmodule.exports = { readJsonFile, writeJsonFile };\n"
+            "content": "const fs = require(\"fs\");\nconst path = require(\"path\");\n\nconst dataFolderPath = path.join(__dirname, \"../data\");\n\nconst readJsonFile = (filename) => {\n  const filePath = path.join(dataFolderPath, filename);\n  if (fs.existsSync(filePath)) {\n    const fileData = fs.readFileSync(filePath, \"utf-8\");\n    return JSON.parse(fileData);\n  }\n  return [];\n};\n\nconst writeJsonFile = (filename, data) => {\n  const filePath = path.join(dataFolderPath, filename);\n  fs.writeFileSync(filePath, JSON.stringify(data, null, 4));\n};\n\nmodule.exports = { readJsonFile, writeJsonFile };\n"
         }
     ]
 }

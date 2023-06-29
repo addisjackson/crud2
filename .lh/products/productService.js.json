@@ -3,44 +3,16 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 0,
             "patches": [
                 {
-                    "date": 1688070171482,
+                    "date": 1688077123705,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
-                },
-                {
-                    "date": 1688070179707,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,17 @@\n const updateProducts = (products) => {\r\n   writeJsonFile('products.json', products);\r\n };\r\n \r\n+function getProductsInStock() {\r\n+  return productsData.filter(product => product.instock);\r\n+}\r\n \r\n+// Get products out of stock\r\n+function getProductsOutOfStock() {\r\n+  return productsData.filter(product => !product.instock);\r\n+}\r\n+\r\n module.exports = {\r\n   getProducts,\r\n   updateProducts,\r\n };\r\n"
-                },
-                {
-                    "date": 1688070186768,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n \r\n module.exports = {\r\n   getProducts,\r\n   updateProducts,\r\n+  getProductsInStock,\r\n };\r\n"
-                },
-                {
-                    "date": 1688070192212,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,7 @@\n module.exports = {\r\n   getProducts,\r\n   updateProducts,\r\n   getProductsInStock,\r\n+  getProductsOutOfStock,\r\n+  \r\n };\r\n"
-                },
-                {
-                    "date": 1688071240145,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   writeJsonFile('products.json', products);\r\n };\r\n \r\n function getProductsInStock() {\r\n+  \r\n   return productsData.filter(product => product.instock);\r\n }\r\n \r\n // Get products out of stock\r\n"
-                },
-                {
-                    "date": 1688071246210,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   writeJsonFile('products.json', products);\r\n };\r\n \r\n function getProductsInStock() {\r\n-  \r\n+  const productsData = readJsonFile('products.json');\r\n   return productsData.filter(product => product.instock);\r\n }\r\n \r\n // Get products out of stock\r\n"
-                },
-                {
-                    "date": 1688071252417,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n }\r\n \r\n // Get products out of stock\r\n function getProductsOutOfStock() {\r\n+  \r\n   return productsData.filter(product => !product.instock);\r\n }\r\n \r\n module.exports = {\r\n"
-                },
-                {
-                    "date": 1688071261118,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n }\r\n \r\n // Get products out of stock\r\n function getProductsOutOfStock() {\r\n-  \r\n+  const productsData = readJsonFile('products.json');\r\n   return productsData.filter(product => !product.instock);\r\n }\r\n \r\n module.exports = {\r\n"
                 }
             ],
-            "date": 1688070171482,
+            "date": 1688077123705,
             "name": "Commit-0",
-            "content": "const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n\r\nconst getProducts = () => {\r\n  return readJsonFile('products.json');\r\n};\r\n\r\nconst updateProducts = (products) => {\r\n  writeJsonFile('products.json', products);\r\n};\r\n\r\n\r\nmodule.exports = {\r\n  getProducts,\r\n  updateProducts,\r\n};\r\n"
+            "content": "const { readJsonFile, writeJsonFile } = require(\"../helpers/dataUtils\");\r\n\r\nconst getProducts = () => {\r\n  return readJsonFile(\"products.json\");\r\n};\r\n\r\nconst updateProducts = (products) => {\r\n  writeJsonFile(\"products.json\", products);\r\n};\r\n\r\nfunction getProductsInStock() {\r\n  const productsData = readJsonFile(\"products.json\");\r\n  return productsData.filter((product) => product.instock);\r\n}\r\n\r\n// Get products out of stock\r\nfunction getProductsOutOfStock() {\r\n  const productsData = readJsonFile(\"products.json\");\r\n  return productsData.filter((product) => !product.instock);\r\n}\r\n\r\nmodule.exports = {\r\n  getProducts,\r\n  updateProducts,\r\n  getProductsInStock,\r\n  getProductsOutOfStock,\r\n};\r\n"
         }
     ]
 }

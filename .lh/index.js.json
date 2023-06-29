@@ -3,136 +3,16 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 30,
+            "activePatchIndex": 0,
             "patches": [
                 {
-                    "date": 1688063447117,
+                    "date": 1688076923744,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
-                },
-                {
-                    "date": 1688063457448,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n+conmst \r\n \r\n-\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063464585,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n-conmst \r\n+conmst { nanoid } = require(\"nanoid\");\r\n \r\n+\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063472122,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n-conmst { nanoid } = require(\"nanoid\");\r\n+const { nanoid } = require(\"nanoid\");\r\n+const\r\n \r\n-\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063482462,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n-const\r\n+const faker = require(\"@faker\");\r\n \r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n"
-                },
-                {
-                    "date": 1688063490487,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n-const faker = require(\"@faker\");\r\n+const faker = require(\"@faker-js/faker\");\r\n \r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n"
-                },
-                {
-                    "date": 1688063496212,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n const faker = require(\"@faker-js/faker\");\r\n \r\n+\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063502012,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n const faker = require(\"@faker-js/faker\");\r\n+const { readJsonFile, writeJsonFile } = require('../dataUtils/helpers/dataUtils');\r\n \r\n-\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063525455,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n const faker = require(\"@faker-js/faker\");\r\n-const { readJsonFile, writeJsonFile } = require('../dataUtils/helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n \r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n"
-                },
-                {
-                    "date": 1688063535117,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n const { nanoid } = require(\"nanoid\");\r\n const faker = require(\"@faker-js/faker\");\r\n const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n \r\n+\r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n \r\n switch (command) {\r\n"
-                },
-                {
-                    "date": 1688063551544,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const productController = require('./products/productController');\r\n const cartController = require('./cart/cartController');\r\n const { nanoid } = require(\"nanoid\");\r\n const faker = require(\"@faker-js/faker\");\r\n-const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');\r\n+const { readJsonFile, writeJsonFile } = require('./helpers/dataUtils');\r\n \r\n \r\n // Call the appropriate controller based on the command line arguments\r\n const command = process.argv[2];\r\n"
-                },
-                {
-                    "date": 1688067958093,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,5 +53,6 @@\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   default:\r\n     console.log('Invalid command.');\r\n+    \r\n }\r\n"
-                },
-                {
-                    "date": 1688067965624,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n+    \r\n   default:\r\n     console.log('Invalid command.');\r\n-    \r\n+\r\n }\r\n"
-                },
-                {
-                    "date": 1688067972349,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-    \r\n+  case 'generate':\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688067977813,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-  case 'generate':\r\n+  case 'ge':\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688067989800,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-  case 'ge':\r\n+  case 'getCart':\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688067996569,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-  case 'getCart':\r\n+  case 'getCartTotal'':\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688068002657,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-  case 'getCartTotal'':\r\n+  case 'getCartTotal'\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688068007787,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,14 @@\n   case 'view-cart-item':\r\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n-  case 'getCartTotal'\r\n+  case 'getCartTotal':\r\n+    function getCartTotal() {\r\n+      const total = cartService.getCartTotal();\r\n+      console.log('Cart Total:', total);\r\n+    }\r\n+    \r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688068040042,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   case 'getCartTotal':\r\n-    function getCartTotal() {\r\n+  \r\n       const total = cartService.getCartTotal();\r\n       console.log('Cart Total:', total);\r\n     }\r\n     \r\n"
-                },
-                {
-                    "date": 1688068058636,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,10 +52,9 @@\n     const cartItemName = process.argv[3];\r\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   case 'getCartTotal':\r\n-  \r\n-      const total = cartService.getCartTotal();\r\n+    const cartTotal = cartController.getCartTotal();\r\n       console.log('Cart Total:', total);\r\n     }\r\n     \r\n   default:\r\n"
-                },
-                {
-                    "date": 1688068064549,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,10 @@\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n-      console.log('Cart Total:', total);\r\n+  \r\n+    console.log('Cart Total:', total);\r\n     }\r\n     \r\n   default:\r\n     console.log('Invalid command.');\r\n"
-                },
-                {
-                    "date": 1688068073743,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n-  \r\n+\r\n     console.log('Cart Total:', total);\r\n     }\r\n     \r\n   default:\r\n"
-                },
-                {
-                    "date": 1688068085728,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,11 @@\n     cartController.viewCartItem(cartItemName);\r\n     break;\r\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n-\r\n     console.log('Cart Total:', total);\r\n-    }\r\n     \r\n+    \r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688068091597,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,9 @@\n     break;\r\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n     console.log('Cart Total:', total);\r\n-    \r\n-    \r\n+    break;\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688070550985,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,6 +57,7 @@\n     console.log('Cart Total:', total);\r\n     break;\r\n   default:\r\n     console.log('Invalid command.');\r\n+    \r\n \r\n }\r\n"
-                },
-                {
-                    "date": 1688070557530,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,10 @@\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n     console.log('Cart Total:', total);\r\n     break;\r\n+  \r\n   default:\r\n     console.log('Invalid command.');\r\n-    \r\n \r\n+\r\n }\r\n"
-                },
-                {
-                    "date": 1688070563610,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,14 @@\n   case 'getCartTotal':\r\n     const cartTotal = cartController.getCartTotal();\r\n     console.log('Cart Total:', total);\r\n     break;\r\n-  \r\n+  case 'inStock':\r\n+      productController.showProductsInStock();\r\n+      break;\r\n+    case 'outOfStock':\r\n+      productController.showProductsOutOfStock();\r\n+      break;\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n \r\n"
-                },
-                {
-                    "date": 1688070569761,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,10 @@\n     const cartTotal = cartController.getCartTotal();\r\n     console.log('Cart Total:', total);\r\n     break;\r\n   case 'inStock':\r\n-      productController.showProductsInStock();\r\n-      break;\r\n+    productController.showProductsInStock();\r\n+     break;\r\n     case 'outOfStock':\r\n       productController.showProductsOutOfStock();\r\n       break;\r\n   default:\r\n"
-                },
-                {
-                    "date": 1688070576906,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,11 +57,11 @@\n     console.log('Cart Total:', total);\r\n     break;\r\n   case 'inStock':\r\n     productController.showProductsInStock();\r\n-     break;\r\n+    break;\r\n     case 'outOfStock':\r\n-      productController.showProductsOutOfStock();\r\n+      roductController.showProductsOutOfStock();\r\n       break;\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n"
-                },
-                {
-                    "date": 1688070584931,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n   case 'inStock':\r\n     productController.showProductsInStock();\r\n     break;\r\n     case 'outOfStock':\r\n-      roductController.showProductsOutOfStock();\r\n-      break;\r\n+    productController.showProductsOutOfStock();\r\n+    break;\r\n   default:\r\n     console.log('Invalid command.');\r\n \r\n \r\n"
                 }
             ],
-            "date": 1688063447117,
+            "date": 1688076923744,
             "name": "Commit-0",
-            "content": "const productController = require('./products/productController');\r\nconst cartController = require('./cart/cartController');\r\n\r\n\r\n// Call the appropriate controller based on the command line arguments\r\nconst command = process.argv[2];\r\n\r\nswitch (command) {\r\n  case 'create':\r\n    productController.createProduct();\r\n    break;\r\n  case 'delete':\r\n    const productNameToDelete = process.argv[3];\r\n    productController.deleteProduct(productNameToDelete);\r\n    break;\r\n  case 'update':\r\n    const productToUpdate = process.argv[3];\r\n    productController.updateProduct(productToUpdate);\r\n    break;\r\n  case 'show':\r\n    const productNameToShow = process.argv[3];\r\n    productController.showProduct(productNameToShow);\r\n    break;\r\n  case 'index':\r\n    productController.showAllProducts();\r\n    break;\r\n  case 'sort':\r\n    productController.sortProductsByPrice();\r\n    break;\r\n  case 'below':\r\n    const priceThreshold = parseInt(process.argv[3]);\r\n    productController.showProductsBelowPrice(priceThreshold);\r\n    break;\r\n  case 'add-to-cart':\r\n    const productNameToAddToCart = process.argv[3];\r\n    cartController.addProductToCart(productNameToAddToCart);\r\n    break;\r\n  case 'view-cart':\r\n    cartController.viewCart();\r\n    break;\r\n  case 'delete-cart':\r\n    cartController.deleteCart();\r\n    break;\r\n  case 'update-cart':\r\n    const productInCartToUpdate = process.argv[3];\r\n    cartController.updateProductInCart(productInCartToUpdate);\r\n    break;\r\n  case 'view-cart-item':\r\n    const cartItemName = process.argv[3];\r\n    cartController.viewCartItem(cartItemName);\r\n    break;\r\n  default:\r\n    console.log('Invalid command.');\r\n}\r\n"
+            "content": "const productController = require('./products/productController');\r\nconst cartController = require('./cart/cartController');\r\nconst { nanoid } = require(\"nanoid\");\r\nconst faker = require(\"@faker-js/faker\");\r\nconst { readJsonFile, writeJsonFile } = require('./helpers/dataUtils');\r\n\r\n\r\nconst command = process.argv[2];\r\n\r\nswitch (command) {\r\n  case 'create':\r\n    productController.createProduct();\r\n    break;\r\n  case 'delete':\r\n    const productNameToDelete = process.argv[3];\r\n    productController.deleteProduct(productNameToDelete);\r\n    break;\r\n  case 'update':\r\n    const productToUpdate = process.argv[3];\r\n    productController.updateProduct(productToUpdate);\r\n    break;\r\n  case 'show':\r\n    const productNameToShow = process.argv[3];\r\n    productController.showProduct(productNameToShow);\r\n    break;\r\n  case 'index':\r\n    productController.showAllProducts();\r\n    break;\r\n  case 'sort':\r\n    productController.sortProductsByPrice();\r\n    break;\r\n  case 'below':\r\n    const priceThreshold = parseInt(process.argv[3]);\r\n    productController.showProductsBelowPrice(priceThreshold);\r\n    break;\r\n  case 'add-to-cart':\r\n    const productNameToAddToCart = process.argv[3];\r\n    cartController.addProductToCart(productNameToAddToCart);\r\n    break;\r\n  case 'view-cart':\r\n    cartController.viewCart();\r\n    break;\r\n  case 'delete-cart':\r\n    cartController.deleteCart();\r\n    break;\r\n  case 'update-cart':\r\n    const productInCartToUpdate = process.argv[3];\r\n    cartController.updateProductInCart(productInCartToUpdate);\r\n    break;\r\n  case 'view-cart-item':\r\n    const cartItemName = process.argv[3];\r\n    cartController.viewCartItem(cartItemName);\r\n    break;\r\n  case 'getCartTotal':\r\n    const cartTotal = cartController.getCartTotal();\r\n    console.log('Cart Total:', total);\r\n    break;\r\n  case 'inStock':\r\n    productController.showProductsInStock();\r\n    break;\r\n  case 'outOfStock':\r\n    productController.showProductsOutOfStock();\r\n    break;\r\n  default:\r\n    console.log('Invalid command.');\r\n\r\n\r\n}\r\n"
         }
     ]
 }

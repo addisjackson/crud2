@@ -5,7 +5,6 @@ const faker = require("@faker-js/faker");
 const { readJsonFile, writeJsonFile } = require('./helpers/dataUtils');
 
 
-// Call the appropriate controller based on the command line arguments
 const command = process.argv[2];
 
 switch (command) {

@@ -1,21 +1,20 @@
-const { readJsonFile, writeJsonFile } = require('../helpers/dataUtils');
+const { readJsonFile, writeJsonFile } = require("../helpers/dataUtils");
 
 const addProductToCart = (productName) => {
-  const products = readJsonFile('products.json');
+  const products = readJsonFile("products.json");
   const productIndex = products.findIndex(
     (product) => product.name.toLowerCase() === productName.toLowerCase()
   );
 
   if (productIndex !== -1) {
-    const cartItems = readJsonFile('cart.json');
+    const cartItems = readJsonFile("cart.json");
     const productToAdd = products[productIndex];
 
     cartItems.push(productToAdd);
-    writeJsonFile('cart.json', cartItems);
+    writeJsonFile("cart.json", cartItems);
 
-    // Remove the product from the products.json file
     products.splice(productIndex, 1);
-    writeJsonFile('products.json', products);
+    writeJsonFile("products.json", products);
 
     console.log(`Product "${productName}" added to the cart.`);
   } else {
@@ -24,30 +23,30 @@ const addProductToCart = (productName) => {
 };
 
 const viewCart = () => {
-  const cartItems = readJsonFile('cart.json');
+  const cartItems = readJsonFile("cart.json");
 
-  console.log('Cart items:');
+  console.log("Cart items:");
   console.log(cartItems);
 };
 
 const deleteCart = () => {
-  writeJsonFile('cart.json', []);
+  writeJsonFile("cart.json", []);
 
-  console.log('Cart deleted.');
+  console.log("Cart deleted.");
 };
 
 const updateProductInCart = (productName) => {
-  const cartItems = readJsonFile('cart.json');
+  const cartItems = readJsonFile("cart.json");
   const productIndex = cartItems.findIndex(
     (product) => product.name.toLowerCase() === productName.toLowerCase()
   );
 
   if (productIndex !== -1) {
     // Modify the properties of the product in the cart as needed
-    cartItems[productIndex].name = 'Updated Product Name';
+    cartItems[productIndex].name = "Updated Product Name";
     cartItems[productIndex].priceInCents = 9999;
 
-    writeJsonFile('cart.json', cartItems);
+    writeJsonFile("cart.json", cartItems);
 
     console.log(`Product "${productName}" updated in the cart.`);
   } else {
@@ -56,13 +55,13 @@ const updateProductInCart = (productName) => {
 };
 
 const viewCartItem = (productName) => {
-  const cartItems = readJsonFile('cart.json');
+  const cartItems = readJsonFile("cart.json");
   const product = cartItems.find(
     (p) => p.name.toLowerCase() === productName.toLowerCase()
   );
 
   if (product) {
-    console.log('Cart item details:');
+    console.log("Cart item details:");
     console.log(product);
   } else {
     console.log(`Product "${productName}" not found in the cart.`);
@@ -70,12 +69,12 @@ const viewCartItem = (productName) => {
 };
 
 const getCartTotal = () => {
-  const cartItems = readJsonFile('cart.json');
+  const cartItems = readJsonFile("cart.json");
   for (const cartItem of cartItems) {
-    total += cartItem.priceInCents*cartItem.quantity;
+    total += cartItem.priceInCents * cartItem.quantity;
   }
   return total;
-}
+};
 
 module.exports = {
   addProductToCart,
@@ -83,5 +82,5 @@ module.exports = {
   deleteCart,
   updateProductInCart,
   viewCartItem,
-  getCartTotal
+  getCartTotal,
 };
